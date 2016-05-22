@@ -1,0 +1,32 @@
+{
+  "parseOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    }
+  },
+
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+
+  "parser": "babel-eslint",
+
+  "plugins": [
+    "react"
+  ],
+
+  "rules": {
+    "react/display-name": 0,
+    "react/prop-types": 0,
+    "no-unused-vars": 0
+  }
+}

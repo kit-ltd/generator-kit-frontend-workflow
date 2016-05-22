@@ -1,0 +1,44 @@
+{
+  "name": "<%= projectName %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "homepage": "www.kit.team",
+  "author": Kit.team,
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.2",
+    "express": "^4.13.4",
+    "pretty-error": "^2.0.0",
+    "react": "^15.1.0",
+    "react-component-builder": "0.0.1",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
+  },
+  "devDependencies": {
+
+  },
+  "jest": {
+    "testPathDirs": [
+      "<rootDir>/frontend"
+    ],
+    "scriptPreprocessor": "<rootDir>/tasks/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "react"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  },
+  "repository": "<%=repo %>",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=5.0",
+    "npm": ">=3.3 <4"
+  }
+}

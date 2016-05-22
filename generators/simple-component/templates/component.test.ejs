@@ -1,0 +1,60 @@
+'use strict';
+
+jest.unmock('./../index.jsx');
+
+import React      from 'react';
+import ReactDOM   from 'react-dom';
+import TestUtils  from 'react-addons-test-utils';
+
+import <%= componentName %> from './../index.jsx';
+
+describe('<%= componentName %>', () => {
+
+  it('should set custom class', () => {
+    let instance = TestUtils.renderIntoDocument(
+      <<%= componentName %> className="anything" />
+    );
+
+    expect(ReactDOM.findDOMNode(instance).className).toMatch('anything');
+  });
+
+  it('should set generate default class', () => {
+    let instance = TestUtils.renderIntoDocument(
+      <<%= componentName %> />
+    );
+
+    expect(ReactDOM.findDOMNode(instance).className).toEqual('<%= defaultClass %>');
+  })
+
+  it('should set children', () => {
+    let instance = TestUtils.renderIntoDocument(
+      <<%= componentName %>>123</<%= componentName %>>
+    );
+
+    expect(ReactDOM.findDOMNode(instance).textContent).toEqual('123');
+  });
+
+  it('should set custom id', () => {
+    let instance = TestUtils.renderIntoDocument(
+      <<%= componentName %> id="custom" />
+    );
+
+    expect(ReactDOM.findDOMNode(instance).id).toEqual('custom');
+  });
+
+  it('should set custom attribute', () => {
+    let instance = TestUtils.renderIntoDocument(
+      <<%= componentName %> data-custom="custom" />
+    );
+
+    expect(ReactDOM.findDOMNode(instance).getAttribute('data-custom')).toEqual('custom');
+  });
+
+  it('should display <%= componentName %> name', () => {
+    let instance = (
+      <<%= componentName %> />
+    );
+
+    expect(instance.type.displayName).toMatch('<%= componentName %>');
+  });
+});

@@ -1,0 +1,17 @@
+'use strict';
+
+import React   from 'react';
+import styles  from './styles/index.less';
+import Builder from 'react-components-builder';
+
+const componentName = <%= componentName %>;
+const tag           = <%= tag %>;
+const defaultClass  = <%= defaultClass %>;
+
+export let <%= componentName %> = new Builder({
+  tag,
+  defaultClass,
+  styles
+}).getComposeComponent(componentName);
+
+export default <%= componentName %>;
