@@ -96,7 +96,7 @@ module.exports = yeoman.Base.extend({
     this.copy('_gitignore', '.gitignore');
     this.copy('_babelrc', '.babelrc');
     this.copy('_editorconfig', '.editorconfig');
-    this.copy('_eslintrc.json', '.eslinrc.json');
+    this.copy('_eslintrc.json', '.eslintrc.json');
     this.copy('LICENSE.txt', 'LICENSE.txt');
 
     this.copy('tools/_eslintrc', 'tools/.eslintrc');
