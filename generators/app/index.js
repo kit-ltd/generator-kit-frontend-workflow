@@ -86,6 +86,10 @@ module.exports = yeoman.Base.extend({
       projectName: this.props.projectName,
       description: this.props.description
     });
+
+    this.template('src/public/index.html.ejs', 'src/public/index.html', {
+      projectName: this.props.projectName
+    });
   },
 
   copyConfig: function () {
@@ -101,7 +105,6 @@ module.exports = yeoman.Base.extend({
     this.copy('src/public/favicon.ico');
     this.copy('src/public/humans.txt');
     this.copy('src/public/robots.txt');
-    this.copy('src/public/index.html');
 
     this.copy('src/client.js');
     this.copy('src/server.js');
